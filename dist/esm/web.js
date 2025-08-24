@@ -1,8 +1,13 @@
 import { WebPlugin } from '@capacitor/core';
 export class ArcGisMapsWeb extends WebPlugin {
-    async echo(options) {
-        console.log('ECHO', options);
-        return options;
+    async init() {
+        throw this.unimplemented();
+    }
+    async signIn() {
+        throw this.unimplemented();
+    }
+    async testAuth() {
+        throw this.unimplemented();
     }
 }
 //# sourceMappingURL=web.js.map

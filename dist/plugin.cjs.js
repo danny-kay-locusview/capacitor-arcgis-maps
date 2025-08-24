@@ -10,9 +10,14 @@ const ArcGisMaps = core.registerPlugin('ArcGisMaps', {
 });
 
 class ArcGisMapsWeb extends core.WebPlugin {
-    async echo(options) {
-        console.log('ECHO', options);
-        return options;
+    async init() {
+        throw this.unimplemented();
+    }
+    async signIn() {
+        throw this.unimplemented();
+    }
+    async testAuth() {
+        throw this.unimplemented();
     }
 }
 

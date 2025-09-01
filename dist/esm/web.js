@@ -1,12 +1,12 @@
 import { WebPlugin } from '@capacitor/core';
 export class ArcGisMapsWeb extends WebPlugin {
-    async init() {
+    signIn() {
         throw this.unimplemented();
     }
-    async signIn() {
+    signOut() {
         throw this.unimplemented();
     }
-    async testAuth() {
+    query() {
         throw this.unimplemented();
     }
 }

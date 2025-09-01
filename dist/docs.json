@@ -6,61 +6,59 @@
     "tags": [],
     "methods": [
       {
-        "name": "init",
-        "signature": "(initOptions: InitOptions) => Promise<void>",
+        "name": "signIn",
+        "signature": "(options: SignInOptions) => Promise<void>",
         "parameters": [
           {
-            "name": "initOptions",
+            "name": "options",
             "docs": "",
-            "type": "InitOptions"
+            "type": "SignInOptions"
           }
         ],
         "returns": "Promise<void>",
         "tags": [],
         "docs": "",
         "complexTypes": [
-          "InitOptions"
-        ],
-        "slug": "init"
-      },
-      {
-        "name": "signIn",
-        "signature": "() => Promise<SignInResult>",
-        "parameters": [],
-        "returns": "Promise<SignInResult>",
-        "tags": [],
-        "docs": "",
-        "complexTypes": [
-          "SignInResult"
+          "SignInOptions"
         ],
         "slug": "signin"
       },
       {
-        "name": "testAuth",
-        "signature": "(testAuthOptions: TestAuthOptions) => Promise<TestAuthResult>",
+        "name": "signOut",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "signout"
+      },
+      {
+        "name": "query",
+        "signature": "(options: QueryOptions) => Promise<QueryResult>",
         "parameters": [
           {
-            "name": "testAuthOptions",
+            "name": "options",
             "docs": "",
-            "type": "TestAuthOptions"
+            "type": "QueryOptions"
           }
         ],
-        "returns": "Promise<TestAuthResult>",
+        "returns": "Promise<QueryResult>",
         "tags": [],
         "docs": "",
         "complexTypes": [
-          "TestAuthResult",
-          "TestAuthOptions"
+          "QueryResult",
+          "QueryOptions"
         ],
-        "slug": "testauth"
+        "slug": "query"
       }
     ],
     "properties": []
   },
   "interfaces": [
     {
-      "name": "InitOptions",
-      "slug": "initoptions",
+      "name": "SignInOptions",
+      "slug": "signinoptions",
       "docs": "",
       "tags": [],
       "methods": [],
@@ -80,7 +78,7 @@
           "type": "string"
         },
         {
-          "name": "redirectUri",
+          "name": "redirectUrl",
           "tags": [],
           "docs": "",
           "complexTypes": [],
@@ -103,142 +101,122 @@
       ]
     },
     {
-      "name": "SignInResult",
-      "slug": "signinresult",
+      "name": "QueryResult",
+      "slug": "queryresult",
       "docs": "",
       "tags": [],
       "methods": [],
       "properties": [
         {
-          "name": "username",
+          "name": "displayFieldName",
           "tags": [],
           "docs": "",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
         },
         {
-          "name": "fullName",
+          "name": "fields",
           "tags": [],
           "docs": "",
-          "complexTypes": [],
-          "type": "string | undefined"
+          "complexTypes": [
+            "Field"
+          ],
+          "type": "Field[]"
         },
         {
-          "name": "email",
+          "name": "fieldAliases",
           "tags": [],
           "docs": "",
-          "complexTypes": [],
-          "type": "string | undefined"
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, string>"
         },
         {
-          "name": "organizationId",
+          "name": "geometryType",
           "tags": [],
           "docs": "",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "'esriGeometryPoint' | 'esriGeometryPolyline'"
         },
         {
-          "name": "role",
+          "name": "spatialReference",
           "tags": [],
           "docs": "",
-          "complexTypes": [],
-          "type": "string | undefined"
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, string>"
         },
         {
-          "name": "privileges",
+          "name": "features",
           "tags": [],
           "docs": "",
-          "complexTypes": [],
-          "type": "string[] | undefined"
+          "complexTypes": [
+            "Feature"
+          ],
+          "type": "Feature[]"
         },
         {
-          "name": "tokenExpires",
+          "name": "url",
           "tags": [],
           "docs": "",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
+        },
+        {
+          "name": "layerId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "layerName",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "symbology",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "any"
         }
       ]
     },
     {
-      "name": "TestAuthResult",
-      "slug": "testauthresult",
+      "name": "Field",
+      "slug": "field",
       "docs": "",
       "tags": [],
       "methods": [],
       "properties": [
         {
-          "name": "portalUrl",
+          "name": "name",
           "tags": [],
           "docs": "",
           "complexTypes": [],
           "type": "string"
         },
         {
-          "name": "isAuthenticated",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "boolean"
-        },
-        {
-          "name": "username",
+          "name": "type",
           "tags": [],
           "docs": "",
           "complexTypes": [],
           "type": "string"
         },
         {
-          "name": "fullName",
+          "name": "alias",
           "tags": [],
           "docs": "",
           "complexTypes": [],
           "type": "string"
         },
         {
-          "name": "email",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string"
-        },
-        {
-          "name": "organizationId",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string"
-        },
-        {
-          "name": "role",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string"
-        },
-        {
-          "name": "privileges",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string[]"
-        },
-        {
-          "name": "orgTitle",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string"
-        },
-        {
-          "name": "securedLayerUrl",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [],
-          "type": "string"
-        },
-        {
-          "name": "securedLayerFeatureCount",
+          "name": "length",
           "tags": [],
           "docs": "",
           "complexTypes": [],
@@ -247,23 +225,84 @@
       ]
     },
     {
-      "name": "TestAuthOptions",
-      "slug": "testauthoptions",
+      "name": "Feature",
+      "slug": "feature",
       "docs": "",
       "tags": [],
       "methods": [],
       "properties": [
         {
-          "name": "securedLayerUrl",
+          "name": "geometry",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "{ x: number; y: number; } | number[][]"
+        },
+        {
+          "name": "attributes",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, any>"
+        }
+      ]
+    },
+    {
+      "name": "QueryOptions",
+      "slug": "queryoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "layerUrl",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "where",
           "tags": [],
           "docs": "",
           "complexTypes": [],
           "type": "string | undefined"
+        },
+        {
+          "name": "limit",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "bbox",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "{ xmin: number; ymin: number; xmax: number; ymax: number; } | undefined"
         }
       ]
     }
   ],
   "enums": [],
-  "typeAliases": [],
+  "typeAliases": [
+    {
+      "name": "Record",
+      "slug": "record",
+      "docs": "Construct a type with a set of properties K of type T",
+      "types": [
+        {
+          "text": "{\r\n    [P in K]: T;\r\n}",
+          "complexTypes": [
+            "K",
+            "T"
+          ]
+        }
+      ]
+    }
+  ],
   "pluginConfigs": []
 }

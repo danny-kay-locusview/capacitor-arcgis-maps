@@ -1,21 +1,19 @@
 import { WebPlugin } from '@capacitor/core';
 
 import type {
-  ArcGisMapsPlugin,
-  SignInResult,
-  TestAuthResult,
+  ArcGisMapsPlugin
 } from './definitions';
 
 export class ArcGisMapsWeb extends WebPlugin implements ArcGisMapsPlugin {
-  async init(): Promise<void> {
+  signIn(): Promise<any> {
     throw this.unimplemented();
   }
 
-  async signIn(): Promise<SignInResult> {
+  signOut(): Promise<any> {
     throw this.unimplemented();
   }
 
-  async testAuth(): Promise<TestAuthResult> {
+  query(): Promise<any> {
     throw this.unimplemented();
   }
 }

@@ -13,51 +13,50 @@ npx cap sync
 
 <docgen-index>
 
-* [`init(...)`](#init)
-* [`signIn()`](#signin)
-* [`testAuth(...)`](#testauth)
+* [`signIn(...)`](#signin)
+* [`signOut()`](#signout)
+* [`query(...)`](#query)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### init(...)
+### signIn(...)
 
 ```typescript
-init(initOptions: InitOptions) => Promise<void>
+signIn(options: SignInOptions) => Promise<void>
 ```
 
-| Param             | Type                                                |
-| ----------------- | --------------------------------------------------- |
-| **`initOptions`** | <code><a href="#initoptions">InitOptions</a></code> |
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code><a href="#signinoptions">SignInOptions</a></code> |
 
 --------------------
 
 
-### signIn()
+### signOut()
 
 ```typescript
-signIn() => Promise<SignInResult>
+signOut() => Promise<void>
 ```
-
-**Returns:** <code>Promise&lt;<a href="#signinresult">SignInResult</a>&gt;</code>
 
 --------------------
 
 
-### testAuth(...)
+### query(...)
 
 ```typescript
-testAuth(testAuthOptions: TestAuthOptions) => Promise<TestAuthResult>
+query(options: QueryOptions) => Promise<QueryResult>
 ```
 
-| Param                 | Type                                                        |
-| --------------------- | ----------------------------------------------------------- |
-| **`testAuthOptions`** | <code><a href="#testauthoptions">TestAuthOptions</a></code> |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#queryoptions">QueryOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#testauthresult">TestAuthResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#queryresult">QueryResult</a>&gt;</code>
 
 --------------------
 
@@ -65,51 +64,68 @@ testAuth(testAuthOptions: TestAuthOptions) => Promise<TestAuthResult>
 ### Interfaces
 
 
-#### InitOptions
+#### SignInOptions
 
 | Prop              | Type                |
 | ----------------- | ------------------- |
 | **`portalUrl`**   | <code>string</code> |
 | **`clientId`**    | <code>string</code> |
-| **`redirectUri`** | <code>string</code> |
+| **`redirectUrl`** | <code>string</code> |
 | **`licenseKey`**  | <code>string</code> |
 | **`apiKey`**      | <code>string</code> |
 
 
-#### SignInResult
+#### QueryResult
 
-| Prop                 | Type                  |
-| -------------------- | --------------------- |
-| **`username`**       | <code>string</code>   |
-| **`fullName`**       | <code>string</code>   |
-| **`email`**          | <code>string</code>   |
-| **`organizationId`** | <code>string</code>   |
-| **`role`**           | <code>string</code>   |
-| **`privileges`**     | <code>string[]</code> |
-| **`tokenExpires`**   | <code>string</code>   |
-
-
-#### TestAuthResult
-
-| Prop                           | Type                  |
-| ------------------------------ | --------------------- |
-| **`portalUrl`**                | <code>string</code>   |
-| **`isAuthenticated`**          | <code>boolean</code>  |
-| **`username`**                 | <code>string</code>   |
-| **`fullName`**                 | <code>string</code>   |
-| **`email`**                    | <code>string</code>   |
-| **`organizationId`**           | <code>string</code>   |
-| **`role`**                     | <code>string</code>   |
-| **`privileges`**               | <code>string[]</code> |
-| **`orgTitle`**                 | <code>string</code>   |
-| **`securedLayerUrl`**          | <code>string</code>   |
-| **`securedLayerFeatureCount`** | <code>number</code>   |
+| Prop                   | Type                                                            |
+| ---------------------- | --------------------------------------------------------------- |
+| **`displayFieldName`** | <code>string</code>                                             |
+| **`fields`**           | <code>Field[]</code>                                            |
+| **`fieldAliases`**     | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+| **`geometryType`**     | <code>'esriGeometryPoint' \| 'esriGeometryPolyline'</code>      |
+| **`spatialReference`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+| **`features`**         | <code>Feature[]</code>                                          |
+| **`url`**              | <code>string</code>                                             |
+| **`layerId`**          | <code>number</code>                                             |
+| **`layerName`**        | <code>string</code>                                             |
+| **`symbology`**        | <code>any</code>                                                |
 
 
-#### TestAuthOptions
+#### Field
 
-| Prop                  | Type                |
-| --------------------- | ------------------- |
-| **`securedLayerUrl`** | <code>string</code> |
+| Prop         | Type                |
+| ------------ | ------------------- |
+| **`name`**   | <code>string</code> |
+| **`type`**   | <code>string</code> |
+| **`alias`**  | <code>string</code> |
+| **`length`** | <code>number</code> |
+
+
+#### Feature
+
+| Prop             | Type                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| **`geometry`**   | <code>{ x: number; y: number; } \| number[][]</code>         |
+| **`attributes`** | <code><a href="#record">Record</a>&lt;string, any&gt;</code> |
+
+
+#### QueryOptions
+
+| Prop           | Type                                                                     |
+| -------------- | ------------------------------------------------------------------------ |
+| **`layerUrl`** | <code>string</code>                                                      |
+| **`where`**    | <code>string</code>                                                      |
+| **`limit`**    | <code>number</code>                                                      |
+| **`bbox`**     | <code>{ xmin: number; ymin: number; xmax: number; ymax: number; }</code> |
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>

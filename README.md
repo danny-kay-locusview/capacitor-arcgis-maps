@@ -1,11 +1,11 @@
-# capacitor-acrgis-maps
+# capacitor-arcgis-maps
 
 A Capacitor plugin for ArcGIS Maps
 
 ## Install
 
 ```bash
-npm install capacitor-acrgis-maps
+npm install capacitor-arcgis-maps
 npx cap sync
 ```
 
@@ -126,6 +126,8 @@ query(options: QueryOptions) => Promise<QueryResult>
 
 Construct a type with a set of properties K of type T
 
-<code>{ [P in K]: T; }</code>
+<code>{
+ [P in K]: T;
+ }</code>
 
 </docgen-api>

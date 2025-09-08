@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-acrgis-maps",
+  "name": "capacitor-arcgis-maps",
   "version": "0.0.1",
   "description": "A Capacitor plugin for ArcGIS Maps",
   "main": "dist/plugin.cjs.js",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorAcrgisMaps.podspec",
+    "CapacitorArcgisMaps.podspec",
     "electron/dist/"
   ],
   "author": "Danny Kay",

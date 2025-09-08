@@ -2,8 +2,9 @@ import { app } from "electron";
 import type { Connection} from "electron-cgi";
 import { ConnectionBuilder } from "electron-cgi";
 import { EventEmitter } from 'events';
-import path from 'path';
-import {
+import * as path from "path";
+
+import type {
   ArcGisMapsPlugin,
   QueryOptions,
   QueryResult,

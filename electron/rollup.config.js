@@ -13,7 +13,7 @@ export default {
   external: ['@capacitor/core'],
   plugins: [
     copy({
-      targets: [{ src: 'electron/src/bin/Release/CapacitorAcrGisMaps.exe', dest: 'electron/dist', rename: 'plugin.exe' }]
+      targets: [{ src: 'electron/src/bin/Release/CapacitorArcGisMaps.exe', dest: 'electron/dist', rename: 'plugin.exe' }]
     })
   ]
 };

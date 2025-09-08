@@ -42,7 +42,10 @@ class ArcGisMaps extends events_1.EventEmitter {
         const appPath = electron_1.app
             .getAppPath()
             .replace('app.asar', 'app.asar.unpacked');
+        console.log(`Path: ${path}`);
+        console.log(`App Path: ${appPath}`);
         const srcPath = path.join(appPath, 'node_modules/capacitor-arcgis-maps/electron/dist');
+        console.log(`Src Path: ${srcPath}`);
         this._connection = new electron_cgi_1.ConnectionBuilder()
             .connectTo(path.join(srcPath, 'plugin.exe'))
             .build();

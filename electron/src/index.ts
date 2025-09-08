@@ -47,11 +47,13 @@ export class ArcGisMaps extends EventEmitter implements ArcGisMapsPlugin {
     const appPath: string = app
       .getAppPath()
       .replace('app.asar', 'app.asar.unpacked');
+    console.log(`Path: ${path}`);
+    console.log(`App Path: ${appPath}`);
     const srcPath: string = path.join(
       appPath,
       'node_modules/capacitor-arcgis-maps/electron/dist',
     );
-
+    console.log(`Src Path: ${srcPath}`);
     this._connection = new ConnectionBuilder()
       .connectTo(path.join(srcPath, 'plugin.exe'))
       .build();
